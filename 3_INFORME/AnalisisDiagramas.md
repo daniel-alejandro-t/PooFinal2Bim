@@ -4,26 +4,26 @@
 
 1. **Requisitos funcionales**: Basándonos en los datos básicos del cliente proporcionados y los diferentes planes, podemos establecer varios requisitos funcionales. Esto incluiría operaciones de creación, lectura, actualización y eliminación (CRUD) de clientes y planes. Además, la aplicación debería ser capaz de generar facturas basadas en los planes de cada cliente.
 
-   | Número | Requerimiento                                               | Asignado a   | Completado | Tested |
-| ------ | ----------------------------------------------------------- | ------------ | ---------- | ------ |
-   | RM-01  | Agregar un nuevo cliente                                    | Daniel       | []         | []     |
-   | RM-02  | Editar la información de un cliente existente               | Daniel       | []         | []     |
-   | RM-03  | Eliminar un cliente                                         | Daniel       | []         | []     |
-   | RM-04  | Visualizar la información de un cliente                     | Daniel       | []         | []     |
-   | RM-05  | Listar todos los clientes                                   | Daniel       | []         | []     |
-   | RM-06  | Agregar un nuevo plan de telefonía móvil                    | Integrante 3 | []         | []     |
-| RM-07  | Editar la información de un plan existente                  | Integrante 1 | []         | []     |
-   | RM-08  | Eliminar un plan                                            | Integrante 2 | []         | []     |
-   | RM-09  | Visualizar la información de un plan                        | Integrante 3 | []         | []     |
-   | RM-10  | Listar todos los planes de telefonía móvil                  | Integrante 1 | []         | []     |
-   | RM-11  | Asociar un plan a un cliente                                | Integrante 2 | []         | []     |
-   | RM-12  | Desasociar un plan de un cliente                            | Integrante 3 | []         | []     |
-   | RM-13  | Visualizar los planes asociados a un cliente                | Integrante 1 | []         | []     |
-| RM-14  | Generar una factura para un cliente                         | Integrante 2 | []         | []     |
-   | RM-15  | Visualizar una factura generada                             | Integrante 3 | []         | []     |
-   | RM-16  | Listar todas las facturas generadas                         | Integrante 1 | []         | []     |
-   | RM-17  | Calcular el costo de cada tipo de plan                      | Integrante 2 | []         | []     |
-   | RM-18  | Guardar y recuperar todos los datos relevantes en/de una DB | Integrante 3 | []         | []     |
+| Número  | Requerimiento                                               | Asignado a   | Completado | Tested |
+|---------|-------------------------------------------------------------|--------------|:----------:|:------:|
+| RM-01   | Agregar un nuevo cliente                                    | Daniel       |     ✓      |   ✓    |
+| RM-02   | Editar la información de un cliente existente               | Daniel       |     ✓      |   ✓    |
+| RM-03   | Eliminar un cliente                                         | Daniel       |     ✓      |   ✓    |
+| RM-04   | Visualizar la información de un cliente                     | Daniel       |     ✓      |   ✓    |
+| RM-05   | Listar todos los clientes                                   | Daniel       |     ✓      |   ✓    |
+| RM-06   | Agregar un nuevo plan de telefonía móvil                    | Integrante 3 |     ✓      |   ✓    |
+| RM-07   | Editar la información de un plan existente                  | Integrante 1 |     ✓      |   ✓    |
+| RM-08   | Eliminar un plan                                            | Integrante 2 |     ✓      |   ✓    |
+| RM-09   | Visualizar la información de un plan                        | Integrante 3 |     ✓      |   ✓    |
+| RM-10   | Listar todos los planes de telefonía móvil                  | Integrante 1 |     ✓      |   ✓    |
+| RM-11   | Asociar un plan a un cliente                                | Integrante 2 |     ✓      |   ✓    |
+| RM-12   | Desasociar un plan de un cliente                            | Integrante 3 |     ✓      |   ✓    |
+| RM-13   | Visualizar los planes asociados a un cliente                | Integrante 1 |     ✓      |   ✓    |
+| RM-14   | Generar una factura para un cliente                         | Integrante 2 |     ✓      |   ✓    |
+| RM-15   | Visualizar una factura generada                             | Integrante 3 |     ✓      |   ✓    |
+| RM-16   | Listar todas las facturas generadas                         | Integrante 1 |     ✓      |   ✓    |
+| RM-17   | Calcular el costo de cada tipo de plan                      | Integrante 2 |     ✓      |   ✓    |
+| RM-18   | Guardar y recuperar todos los datos relevantes en/de una DB | Integrante 3 |     ✓      |   ✓    |
 
 2. **Requisitos no funcionales**: La aplicación debería usar SQLite como motor de base de datos. Debe seguir los principios de la arquitectura MVC y utilizar el paradigma de la programación orientada a objetos (POO) utilizando conceptos como la herencia y el polimorfismo.
 
