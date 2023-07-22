@@ -4,26 +4,26 @@
 
 1. **Requisitos funcionales**: Basándonos en los datos básicos del cliente proporcionados y los diferentes planes, podemos establecer varios requisitos funcionales. Esto incluiría operaciones de creación, lectura, actualización y eliminación (CRUD) de clientes y planes. Además, la aplicación debería ser capaz de generar facturas basadas en los planes de cada cliente.
 
-| Número  | Requerimiento                                               | Asignado a   | Completado | Tested |
-|---------|-------------------------------------------------------------|--------------|:----------:|:------:|
-| RM-01   | Agregar un nuevo cliente                                    | Daniel       |     ✓      |   ✓    |
-| RM-02   | Editar la información de un cliente existente               | Daniel       |     ✓      |   ✓    |
-| RM-03   | Eliminar un cliente                                         | Daniel       |     ✓      |   ✓    |
-| RM-04   | Visualizar la información de un cliente                     | Daniel       |     ✓      |   ✓    |
-| RM-05   | Listar todos los clientes                                   | Daniel       |     ✓      |   ✓    |
-| RM-06   | Agregar un nuevo plan de telefonía móvil                    | Integrante 3 |     ✓      |   ✓    |
-| RM-07   | Editar la información de un plan existente                  | Integrante 1 |     ✓      |   ✓    |
-| RM-08   | Eliminar un plan                                            | Integrante 2 |     ✓      |   ✓    |
-| RM-09   | Visualizar la información de un plan                        | Integrante 3 |     ✓      |   ✓    |
-| RM-10   | Listar todos los planes de telefonía móvil                  | Integrante 1 |     ✓      |   ✓    |
-| RM-11   | Asociar un plan a un cliente                                | Integrante 2 |     ✓      |   ✓    |
-| RM-12   | Desasociar un plan de un cliente                            | Integrante 3 |     ✓      |   ✓    |
-| RM-13   | Visualizar los planes asociados a un cliente                | Integrante 1 |     ✓      |   ✓    |
-| RM-14   | Generar una factura para un cliente                         | Integrante 2 |     ✓      |   ✓    |
-| RM-15   | Visualizar una factura generada                             | Integrante 3 |     ✓      |   ✓    |
-| RM-16   | Listar todas las facturas generadas                         | Integrante 1 |     ✓      |   ✓    |
-| RM-17   | Calcular el costo de cada tipo de plan                      | Integrante 2 |     ✓      |   ✓    |
-| RM-18   | Guardar y recuperar todos los datos relevantes en/de una DB | Integrante 3 |     ✓      |   ✓    |
+| Número | Requerimiento                                               | Asignado a | Completado | Tested |
+| ------ | ----------------------------------------------------------- | ---------- | :--------: | :----: |
+| RM-01  | Agregar un nuevo cliente                                    | Daniel     |            |        |
+| RM-02  | Editar la información de un cliente existente               | Daniel     |            |        |
+| RM-03  | Eliminar un cliente                                         | Daniel     |            |        |
+| RM-04  | Visualizar la información de un cliente                     | Daniel     |            |        |
+| RM-05  | Listar todos los clientes                                   | Daniel     |            |        |
+| RM-06  | Agregar un nuevo plan de telefonía móvil                    | Juan       |            |        |
+| RM-07  | Editar la información de un plan existente                  | Juan       |            |        |
+| RM-08  | Eliminar un plan                                            | Juan       |            |        |
+| RM-09  | Visualizar la información de un plan                        | Juan       |            |        |
+| RM-10  | Listar todos los planes de telefonía móvil                  | Juan       |            |        |
+| RM-11  | Asociar un plan a un cliente                                | Renato     |            |        |
+| RM-12  | Desasociar un plan de un cliente                            | Renato     |            |        |
+| RM-13  | Visualizar los planes asociados a un cliente                | Renato     |            |        |
+| RM-14  | Generar una factura para un cliente                         | Renato     |            |        |
+| RM-15  | Visualizar una factura generada                             | Renato     |            |        |
+| RM-16  | Listar todas las facturas generadas                         | Renato     |            |        |
+| RM-17  | Calcular el costo de cada tipo de plan                      | Renato     |            |        |
+| RM-18  | Guardar y recuperar todos los datos relevantes en/de una DB | Renato     |            |        |
 
 2. **Requisitos no funcionales**: La aplicación debería usar SQLite como motor de base de datos. Debe seguir los principios de la arquitectura MVC y utilizar el paradigma de la programación orientada a objetos (POO) utilizando conceptos como la herencia y el polimorfismo.
 
@@ -34,6 +34,7 @@
    3. **Extensibilidad**: El sistema debe ser diseñado de tal manera que sea fácil agregar nuevas características o modificar las existentes.
 4. **Persistencia de Datos**: El sistema debe garantizar la persistencia de los datos incluso en caso de fallas del sistema.
    
+
 Pueden existir otros requerimientos que a lo largo del proyecto se irán contemplando.
 
 ## Diseño
@@ -50,7 +51,7 @@ Pueden existir otros requerimientos que a lo largo del proyecto se irán contemp
 
 3. **Base de datos**: Como se especifica en los requerimientos, utilizaremos SQLite como motor de base de datos. En la base de datos, habrá tablas para almacenar información de clientes, planes y facturas.
 
-## Modelo
+## Modeloc
 
 El diagrama ER (Entidad-Relación) permite modelar la estructura de una base de datos. 
 
@@ -113,8 +114,6 @@ erDiagram
           }
 
 ```
-
-Por favor ten en cuenta que esta es una aproximación muy básica y puede requerir ajustes basados en los requerimientos exactos de tu proyecto.
 
 Este diagrama representa tres entidades principales: `CLIENT`, `CLIENT-PLAN` y `PLAN`. `CLIENT` representa a los clientes, `PLAN` representa los diferentes tipos de planes disponibles, y `CLIENT-PLAN` representa la relación entre los clientes y los planes. Los clientes pueden tener uno o dos planes, y cada plan puede ser utilizado por muchos clientes. Los diferentes tipos de planes heredan de la entidad `PLAN`.
 
@@ -268,3 +267,83 @@ Esta es una estructura de proyecto típica de Maven.
 - El archivo `.gitignore` es donde indicas a Git qué archivos o directorios no debería rastrear.
 
 - El archivo `README.md` es donde puedes escribir la documentación de tu proyecto.
+
+## Desarrollo
+
+## DDL
+
+A continuación se proporciona el Data Definition Language para la base de datos sqlite.
+
+```sqlite
+-- Tabla para almacenar información sobre los clientes
+CREATE TABLE CLIENT (
+    id TEXT PRIMARY KEY,
+    nombres TEXT NOT NULL,
+    pasaporte_cedula TEXT UNIQUE NOT NULL,
+    ciudad TEXT NOT NULL,
+    marca TEXT NOT NULL,
+    modelo TEXT NOT NULL,
+    numero_de_celular TEXT UNIQUE NOT NULL,
+    pago_mensual REAL NOT NULL,
+    atributo_adicional_1 TEXT,
+    atributo_adicional_2 TEXT
+);
+
+-- Tabla para la relación entre clientes y planes
+CREATE TABLE CLIENT_PLAN (
+    id TEXT PRIMARY KEY,
+    clientId TEXT NOT NULL,
+    planId TEXT NOT NULL,
+    FOREIGN KEY(clientId) REFERENCES CLIENT(id),
+    FOREIGN KEY(planId) REFERENCES PLAN(id)
+);
+
+-- Tabla base para almacenar información general de los planes
+CREATE TABLE PLAN (
+    id TEXT PRIMARY KEY,
+    nombre TEXT NOT NULL
+);
+
+-- Tabla para almacenar información de los planes de tipo PlanPostPagoMinutosMegasEconomico
+CREATE TABLE PLANPOSTPAGOMINUTOSMEGASECONOMICO (
+    id TEXT PRIMARY KEY,
+    minutos INTEGER NOT NULL,
+    costo_minutos REAL NOT NULL,
+    gigas REAL NOT NULL,
+    costo_por_giga REAL NOT NULL,
+    porcentaje_de_descuento REAL NOT NULL,
+    FOREIGN KEY(id) REFERENCES PLAN(id)
+);
+
+-- Tabla para almacenar información de los planes de tipo PlanPostPagoMinutos
+CREATE TABLE PLANPOSTPAGOMINUTOS (
+    id TEXT PRIMARY KEY,
+    minutos_nacionales INTEGER NOT NULL,
+    costo_minuto_nacional REAL NOT NULL,
+    minutos_internacionales INTEGER NOT NULL,
+    costo_minuto_internacional REAL NOT NULL,
+    FOREIGN KEY(id) REFERENCES PLAN(id)
+);
+
+-- Tabla para almacenar información de los planes de tipo PlanPostPagoMegas
+CREATE TABLE PLANPOSTPAGOMEGAS (
+    id TEXT PRIMARY KEY,
+    gigas REAL NOT NULL,
+    costo_por_giga REAL NOT NULL,
+    tarifa_base REAL NOT NULL,
+    FOREIGN KEY(id) REFERENCES PLAN(id)
+);
+
+-- Tabla para almacenar información de los planes de tipo PlanPostPagoMinutosMegas
+CREATE TABLE PLANPOSTPAGOMINUTOSMEGAS (
+    id TEXT PRIMARY KEY,
+    minutos INTEGER NOT NULL,
+    costo_minutos REAL NOT NULL,
+    gigas REAL NOT NULL,
+    costo_por_giga REAL NOT NULL,
+    FOREIGN KEY(id) REFERENCES PLAN(id)
+);
+
+```
+
+Con este script creamos la estructura de nuestra base de datos, recordemos que todas las tablas de planes están relacionadas a la tabla PLAN por medio de sus llaves primarias replicando así la herencia.
