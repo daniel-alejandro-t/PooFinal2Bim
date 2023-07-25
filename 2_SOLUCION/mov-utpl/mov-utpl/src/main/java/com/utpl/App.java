@@ -1,5 +1,5 @@
 package com.utpl;
-
+/*
 import javax.mvc.security.Csrf;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -15,3 +15,4 @@ public class App extends Application {
         return props;
     }
 }
+*/

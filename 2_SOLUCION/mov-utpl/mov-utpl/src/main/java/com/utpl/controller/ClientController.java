@@ -1,8 +1,11 @@
+package com.utpl.controller;
+
 import java.sql.SQLException;
 import java.util.List;
 
 // Importamos el modelo
 import com.utpl.model.Cliente;
+import com.utpl.model.dao.ClientDao;
 
 public class ClientController {
     private ClientDao clientDao;
@@ -14,23 +17,23 @@ public class ClientController {
     public Cliente addClient(String name, String passport, String city, String brand, String model, String cellNumber, double monthlyPayment) {
         Cliente client = new Cliente(name, passport, city, brand, model, cellNumber, monthlyPayment);
         try {
-            clientDao.addClient(client);
+            clientDao.create(client);
         } catch (SQLException e) {
             System.out.println("Error al agregar el cliente: " + e.getMessage());
         }
         return client;
     }
 
-    public List<Client> getAllClients() {
+    public List<Cliente> getAllClients() {
         try {
-            return clientDao.getAllClients();
+            return clientDao.findAll();
         } catch (SQLException e) {
             System.out.println("Error al obtener los clientes: " + e.getMessage());
             return null;
         }
     }
 
-    public void updateClient(Client client) {
+    public void updateClient(Cliente client) {
         try {
             clientDao.updateClient(client);
         } catch (SQLException e) {
@@ -38,7 +41,7 @@ public class ClientController {
         }
     }
 
-    public void deleteClient(Client client) {
+    public void deleteClient(Cliente client) {
         try {
             clientDao.deleteClient(client);
         } catch (SQLException e) {

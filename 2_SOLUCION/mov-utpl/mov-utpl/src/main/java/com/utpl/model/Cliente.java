@@ -1,3 +1,5 @@
+package com.utpl.model;
+
 public class Cliente {
     private String nombre;
     private String pasaporte;
