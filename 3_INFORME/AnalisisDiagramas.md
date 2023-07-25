@@ -51,7 +51,43 @@ Pueden existir otros requerimientos que a lo largo del proyecto se irán contemp
 
 3. **Base de datos**: Como se especifica en los requerimientos, utilizaremos SQLite como motor de base de datos. En la base de datos, habrá tablas para almacenar información de clientes, planes y facturas.
 
-## Modeloc
+## MVC
+
+En el siguiente diagrama de flujo se muestra como intactuan las clases relacionadas a Cliente en el Modelo-Vista-Controlador:
+
+```mermaid
+graph TB
+  UserAction[Acción de Usuario en la Vista]
+  UserAction -->|1| Controller
+  subgraph "Capa de Controlador"
+    Controller[ClienteController]
+  end
+  Controller -->|2| ModelDAO
+  subgraph "Capa de Modelo"
+    ModelDAO[ClientDao]
+    Model[Cliente]
+    ModelDAO -->|3| Model
+  end
+  ModelDAO -->|4| Controller
+  Controller -->|5| View
+  subgraph "Capa de Vista"
+    View[ClientView]
+  end
+  View -->|6| UserAction
+```
+
+Se sigue el siguiente flujo:
+
+1. Un usuario realiza una acción en la vista, por ejemplo, hacer clic en un botón para crear un nuevo cliente.
+2. Esta acción es manejada por el controlador (`ClienteController`).
+3. El controlador utiliza `ClientDao` (en la capa de modelo) para interactuar con la base de datos.
+4. `ClientDao` realiza la operación en la base de datos y devuelve los resultados (si los hay) al controlador.
+5. El controlador actualiza la vista con cualquier nuevo dato.
+6. La vista muestra los datos actualizados al usuario. Y el ciclo puede repetirse con nuevas acciones del usuario.
+
+Esto es una simplificación del proceso, pero muestra cómo cada componente en la arquitectura MVC tiene un papel definido y cómo se comunican entre sí.
+
+## Modelo
 
 El diagrama ER (Entidad-Relación) permite modelar la estructura de una base de datos. 
 
