@@ -19,7 +19,7 @@ public class ClienteView {
 
     public void showClient(Cliente cliente) {
         System.out.println("Nombre: " + cliente.getNombre());
-        System.out.println("Pasaporte: " + cliente.getPasaporte());
+        System.out.println("Cédula: " + cliente.getCedula());
         System.out.println("Ciudad: " + cliente.getCiudad());
         System.out.println("Marca: " + cliente.getMarca());
         System.out.println("Modelo: " + cliente.getModelo());

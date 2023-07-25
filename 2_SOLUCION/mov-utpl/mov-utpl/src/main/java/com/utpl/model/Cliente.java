@@ -1,19 +1,23 @@
 package com.utpl.model;
 
 public class Cliente {
-    private String nombre;
-    private String pasaporte;
+    private String cedula;
+    private String nombres;
     private String ciudad;
+    private String provincia;
+    private String canton;
     private String marca;
     private String modelo;
     private String numeroCelular;
     private double pagoMensual;
 
     // constructor
-    public Cliente(String nombre, String pasaporte, String ciudad, String marca, String modelo, String numeroCelular, double pagoMensual) {
-        this.nombre = nombre;
-        this.pasaporte = pasaporte;
+    public Cliente(String cedula, String nombres, String ciudad, String provincia, String canton, String marca, String modelo, String numeroCelular, double pagoMensual) {
+        this.cedula = cedula;
+        this.nombres = nombres;
         this.ciudad = ciudad;
+        this.provincia = provincia;
+        this.canton = canton;
         this.marca = marca;
         this.modelo = modelo;
         this.numeroCelular = numeroCelular;
@@ -26,19 +30,19 @@ public class Cliente {
     }
 
     public String getNombre() {
-        return nombre;
+        return nombres;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombres = nombre;
     }
 
-    public String getPasaporte() {
-        return pasaporte;
+    public String getCedula() {
+        return cedula;
     }
 
-    public void setPasaporte(String pasaporte) {
-        this.pasaporte = pasaporte;
+    public void setCedula(String pasaporte) {
+        this.cedula = pasaporte;
     }
 
     public String getCiudad() {
@@ -79,6 +83,22 @@ public class Cliente {
 
     public void setPagoMensual(double pagoMensual) {
         this.pagoMensual = pagoMensual;
+    }
+
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+
+    public String getCanton(){
+        return canton;
+    }
+
+    public void setCanton(String canton){
+        this.canton = canton;
     }
 
 }

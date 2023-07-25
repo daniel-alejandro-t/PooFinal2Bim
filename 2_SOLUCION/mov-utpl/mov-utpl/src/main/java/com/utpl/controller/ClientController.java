@@ -14,8 +14,8 @@ public class ClientController {
         this.clientDao = new ClientDao();
     }
 
-    public Cliente addClient(String name, String passport, String city, String brand, String model, String cellNumber, double monthlyPayment) {
-        Cliente client = new Cliente(name, passport, city, brand, model, cellNumber, monthlyPayment);
+    public Cliente addClient(String cedula, String nombres, String ciudad, String provincia, String canton, String marca, String modelo, String numeroCelular, double pagoMensual) {
+        Cliente client = new Cliente(cedula, nombres, ciudad, provincia, canton, marca, modelo, numeroCelular, pagoMensual);
         try {
             clientDao.create(client);
         } catch (SQLException e) {

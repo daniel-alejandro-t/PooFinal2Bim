@@ -6,11 +6,11 @@
 
 | Número | Requerimiento                                               | Asignado a | Completado | Tested |
 | ------ | ----------------------------------------------------------- | ---------- | :--------: | :----: |
-| RM-01  | Agregar un nuevo cliente                                    | Daniel     |            |        |
-| RM-02  | Editar la información de un cliente existente               | Daniel     |            |        |
-| RM-03  | Eliminar un cliente                                         | Daniel     |            |        |
-| RM-04  | Visualizar la información de un cliente                     | Daniel     |            |        |
-| RM-05  | Listar todos los clientes                                   | Daniel     |            |        |
+| RM-01  | Agregar un nuevo cliente                                    | Daniel     |    [x]     |        |
+| RM-02  | Editar la información de un cliente existente               | Daniel     |    [x]     |        |
+| RM-03  | Eliminar un cliente                                         | Daniel     |    [x]     |        |
+| RM-04  | Visualizar la información de un cliente                     | Daniel     |    [x]     |        |
+| RM-05  | Listar todos los clientes                                   | Daniel     |    [x]     |        |
 | RM-06  | Agregar un nuevo plan de telefonía móvil                    | Juan       |            |        |
 | RM-07  | Editar la información de un plan existente                  | Juan       |            |        |
 | RM-08  | Eliminar un plan                                            | Juan       |            |        |
@@ -53,7 +53,7 @@ Pueden existir otros requerimientos que a lo largo del proyecto se irán contemp
 
 ## MVC
 
-En el siguiente diagrama de flujo se muestra como intactuan las clases relacionadas a Cliente en el Modelo-Vista-Controlador:
+En el siguiente diagrama de flujo se muestra como interactuan las clases relacionadas a Cliente en el Modelo-Vista-Controlador:
 
 ```mermaid
 graph TB
@@ -96,16 +96,15 @@ erDiagram
           CLIENT ||--|| CLIENT-PLAN : "has"
           CLIENT-PLAN ||--|| PLAN : "uses"
           CLIENT {
-            string id
+            string cedula
             string nombres
-            string pasaporte_cedula
             string ciudad
             string marca
             string modelo
             string numero_de_celular
             float pago_mensual
-            string atributo_adicional_1
-            string atributo_adicional_2
+            string provincia
+            string canton
           }
           CLIENT-PLAN{
             string id
@@ -313,16 +312,15 @@ A continuación se proporciona el Data Definition Language para la base de datos
 ```sqlite
 -- Tabla para almacenar información sobre los clientes
 CREATE TABLE CLIENT (
-    id TEXT PRIMARY KEY,
+    cedula TEXT UNIQUE NOT NULL PRIMARY KEY,
     nombres TEXT NOT NULL,
-    pasaporte_cedula TEXT UNIQUE NOT NULL,
     ciudad TEXT NOT NULL,
+    provincia TEXT,
+    canton TEXT,
     marca TEXT NOT NULL,
     modelo TEXT NOT NULL,
     numero_de_celular TEXT UNIQUE NOT NULL,
-    pago_mensual REAL NOT NULL,
-    atributo_adicional_1 TEXT,
-    atributo_adicional_2 TEXT
+    pago_mensual REAL NOT NULL
 );
 
 -- Tabla para la relación entre clientes y planes
