@@ -6,11 +6,11 @@
 
 | Número | Requerimiento                                               | Asignado a | Completado | Tested |
 | ------ | ----------------------------------------------------------- | ---------- | :--------: | :----: |
-| RM-01  | Agregar un nuevo cliente                                    | Daniel     |    [x]     |        |
-| RM-02  | Editar la información de un cliente existente               | Daniel     |    [x]     |        |
-| RM-03  | Eliminar un cliente                                         | Daniel     |    [x]     |        |
-| RM-04  | Visualizar la información de un cliente                     | Daniel     |    [x]     |        |
-| RM-05  | Listar todos los clientes                                   | Daniel     |    [x]     |        |
+| RM-01  | Agregar un nuevo cliente                                    | Daniel     |    [x]     | [x]    |
+| RM-02  | Editar la información de un cliente existente               | Daniel     |    [x]     | [x]    |
+| RM-03  | Eliminar un cliente                                         | Daniel     |    [x]     | [x]    |
+| RM-04  | Visualizar la información de un cliente                     | Daniel     |    [x]     | [x]    |
+| RM-05  | Listar todos los clientes                                   | Daniel     |    [x]     | [x]    |
 | RM-06  | Agregar un nuevo plan de telefonía móvil                    | Juan       |            |        |
 | RM-07  | Editar la información de un plan existente                  | Juan       |            |        |
 | RM-08  | Eliminar un plan                                            | Juan       |            |        |
@@ -87,7 +87,7 @@ Se sigue el siguiente flujo:
 
 Esto es una simplificación del proceso, pero muestra cómo cada componente en la arquitectura MVC tiene un papel definido y cómo se comunican entre sí.
 
-## Modelo
+## Modelo 📱
 
 El diagrama ER (Entidad-Relación) permite modelar la estructura de una base de datos. 
 
@@ -152,28 +152,54 @@ erDiagram
 
 Este diagrama representa tres entidades principales: `CLIENT`, `CLIENT-PLAN` y `PLAN`. `CLIENT` representa a los clientes, `PLAN` representa los diferentes tipos de planes disponibles, y `CLIENT-PLAN` representa la relación entre los clientes y los planes. Los clientes pueden tener uno o dos planes, y cada plan puede ser utilizado por muchos clientes. Los diferentes tipos de planes heredan de la entidad `PLAN`.
 
-## Diagrama de clases
+## Diagrama de clases 
 
 La siguiente es una versión simplificada de cómo podrían organizarse las clases para este proyecto utilizando el patrón MVC (Modelo-Vista-Controlador) y el lenguaje de programación Java. 
 
 ```mermaid
 classDiagram
       class Cliente {
-          +String id
-          +String nombres
-          +String pasaporte_cedula
-          +String ciudad
-          +String marca
-          +String modelo
-          +String numero_de_celular
-          +double pago_mensual
-          +String atributo_adicional_1
-          +String atributo_adicional_2
-          +Plan[] planes
+          -String id
+          -String nombres
+          -String pasaporteCedula
+          -String ciudad
+          -String marca
+          -String modelo
+          -String numeroDeCelular
+          -double pagoMensual
+          -String atributoAdicional1
+          -String atributoAdicional2
+          -Plan[] planes
+          +getId()
+          +getNombres()
+          +getPasaporteCedula()
+          +getCiudad()
+          +getMarca()
+          +getModelo()
+          +getNumeroDeCelular()
+          +getPagoMensual()
+          +getAtributoAdicional1()
+          +getAtributoAdicional2()
+          +getPlanes()
+          +setId(String id)
+          +setNombres(String nombres)
+          +setPasaporteCedula(String pasaporteCedula)
+          +setCiudad(String ciudad)
+          +setMarca(String marca)
+          +setModelo(String modelo)
+          +setNumeroDeCelular(String numeroDeCelular)
+          +setPagoMensual(double pagoMensual)
+          +setAtributoAdicional1(String atributoAdicional1)
+          +setAtributoAdicional2(String atributoAdicional2)
+          +setPlanes(Plan[] planes)
       }
       class Plan {
-          +String id
-          +String nombre
+          -String id
+          -String nombre
+          +getId()
+          +getNombre()
+          +setId(String id)
+          +setNombre(String nombre)
           +double calcularCosto()
       }
       Plan <|-- PlanPostPagoMinutosMegasEconomico
@@ -181,31 +207,63 @@ classDiagram
       Plan <|-- PlanPostPagoMegas
       Plan <|-- PlanPostPagoMinutosMegas
       class PlanPostPagoMinutosMegasEconomico {
-          +int minutos
-          +double costo_minutos
-          +double gigas
-          +double costo_por_giga
-          +double porcentaje_de_descuento
+          -int minutos
+          -double costoMinutos
+          -double gigas
+          -double costoPorGiga
+          -double porcentajeDeDescuento
+          +getMinutos()
+          +getCostoMinutos()
+          +getGigas()
+          +getCostoPorGiga()
+          +getPorcentajeDeDescuento()
+          +setMinutos(int minutos)
+          +setCostoMinutos(double costoMinutos)
+          +setGigas(double gigas)
+          +setCostoPorGiga(double costoPorGiga)
+          +setPorcentajeDeDescuento(double porcentajeDeDescuento)
           +double calcularCosto()
       }
       class PlanPostPagoMinutos {
-          +int minutos_nacionales
-          +double costo_minuto_nacional
-          +int minutos_internacionales
-          +double costo_minuto_internacional
+          -int minutosNacionales
+          -double costoMinutoNacional
+          -int minutosInternacionales
+          -double costoMinutoInternacional
+          +getMinutosNacionales()
+          +getCostoMinutoNacional()
+          +getMinutosInternacionales()
+          +getCostoMinutoInternacional()
+          +setMinutosNacionales(int minutosNacionales)
+          +setCostoMinutoNacional(double costoMinutoNacional)
+          +setMinutosInternacionales(int minutosInternacionales)
+          +setCostoMinutoInternacional(double costoMinutoInternacional)
           +double calcularCosto()
       }
       class PlanPostPagoMegas {
-          +double gigas
-          +double costo_por_giga
-          +double tarifa_base
+          -double gigas
+          -double costoPorGiga
+          -double tarifaBase
+          +getGigas()
+          +getCostoPorGiga()
+          +getTarifaBase()
+          +setGigas(double gigas)
+          +setCostoPorGiga(double costoPorGiga)
+          +setTarifaBase(double tarifaBase)
           +double calcularCosto()
       }
       class PlanPostPagoMinutosMegas {
-          +int minutos
-          +double costo_minutos
-          +double gigas
-          +double costo_por_giga
+          -int minutos
+          -double costoMinutos
+          -double gigas
+          -double costoPorGiga
+          +getMinutos()
+          +getCostoMinutos()
+          +getGigas()
+          +getCostoPorGiga()
+          +setMinutos(int minutos)
+          +setCostoMinutos(double costoMinutos)
+          +setGigas(double gigas)
+          +setCostoPorGiga(double costoPorGiga)
           +double calcularCosto()
       }
       class ClienteController {
@@ -224,17 +282,26 @@ classDiagram
           +Factura generateFactura(Cliente cliente)
       }
       class Factura {
-          +String id
-          +Cliente cliente
-          +double total
+          -String id
+          -Cliente cliente
+          -double total
+          +getId()
+          +getCliente()
+          +getTotal()
+          +setId(String id)
+          +setCliente(Cliente cliente)
+          +setTotal(double total)
           +String generarDetalle()
       }
       class ClienteView {
-          +void printClienteDetails(String clienteId, String clienteNombre, String clienteCiudad)
+          +void printClienteDetails(Cliente cliente)
       }
       class FacturaView {
-          +void printFacturaDetails(String facturaId, String clienteNombre, double total)
+          +void printFacturaDetails(Factura factura)
       }
+      Cliente "1" *-- "*" Plan : has
+      Factura "1" -- "1" Cliente : belongs to
+
 ```
 Este diagrama de clases representa las relaciones entre las clases propuestas. Hay una clase `Cliente`, que tiene una relación con la clase `Plan` a través de un array (un cliente puede tener uno o dos planes). La clase `Plan` es una clase abstracta, de la que heredan las clases `PlanPostPagoMinutosMegasEconomico`, `PlanPostPagoMinutos`, `PlanPostPagoMegas` y `PlanPostPagoMinutosMegas`. Cada una de estas clases tiene un método `calcularCosto` que se implementará de manera diferente en cada subclase.
 
@@ -249,17 +316,17 @@ La estructura de un proyecto de Java utilizando el patrón MVC (Modelo-Vista-Con
 ```
 Mov-UTPL
 │
-├───src
-│   ├───main
-│   │   ├───java
-│   │   │   ├───com
-│   │   │   │   ├───utpl
-│   │   │   │   │   ├───mov
-│   │   │   │   │   │   ├───controller
+├───src/
+│   ├───main/
+│   │   ├───java/
+│   │   │   ├───com/
+│   │   │   │   ├───utpl/
+│   │   │   │   │   ├───mov/
+│   │   │   │   │   │   ├───controller/
 │   │   │   │   │   │   │   ├───ClienteController.java
 │   │   │   │   │   │   │   ├───PlanController.java
 │   │   │   │   │   │   │   └───FacturaController.java
-│   │   │   │   │   │   ├───model
+│   │   │   │   │   │   ├───model/
 │   │   │   │   │   │   │   ├───Cliente.java
 │   │   │   │   │   │   │   ├───Plan.java
 │   │   │   │   │   │   │   ├───PlanPostPagoMinutosMegasEconomico.java
@@ -267,20 +334,28 @@ Mov-UTPL
 │   │   │   │   │   │   │   ├───PlanPostPagoMegas.java
 │   │   │   │   │   │   │   ├───PlanPostPagoMinutosMegas.java
 │   │   │   │   │   │   │   └───Factura.java
-│   │   │   │   │   │   └───view
+|	│   │   │   │   │   │   ├───dao/
+|	│   │   │   │   │   │   │   ├───ClienteDAO.java
+|	│   │   │   │   │   │   │   ├───PlanDAO.java
+|	│   │   │   │   │   │   │   ├───PlanPostPagoMinutosMegasEconomicoDAO.java
+|	│   │   │   │   │   │   │   ├───PlanPostPagoMinutosDAO.java
+|	│   │   │   │   │   │   │   ├───PlanPostPagoMegasDAO.java
+|	│   │   │   │   │   │   │   ├───PlanPostPagoMinutosMegasDAO.java
+|	│   │   │   │   │   │   │   └───FacturaDAO.java
+│   │   │   │   │   │   └───view/
 │   │   │   │   │   │       ├───ClienteView.java
 │   │   │   │   │   │       └───FacturaView.java
-│   │   │   │   │   └───utils
+│   │   │   │   │   └───utils/
 │   │   │   │   │       └───DBUtil.java
-│   │   ├───resources
-│   │   │   └───db
+│   │   ├───resources/
+│   │   │   └───db/
 │   │   │       └───movutpl.db
 │   └───test
 │       └───java
 │           └───com
 │               └───utpl
 │                   └───mov
-│                       └───controller
+│                       └───controller/
 │                           ├───ClienteControllerTest.java
 │                           ├───PlanControllerTest.java
 │                           └───FacturaControllerTest.java
@@ -381,3 +456,6 @@ CREATE TABLE PLANPOSTPAGOMINUTOSMEGAS (
 ```
 
 Con este script creamos la estructura de nuestra base de datos, recordemos que todas las tablas de planes están relacionadas a la tabla PLAN por medio de sus llaves primarias replicando así la herencia.
+
+## 🧪 Pruebas unitarias
+
