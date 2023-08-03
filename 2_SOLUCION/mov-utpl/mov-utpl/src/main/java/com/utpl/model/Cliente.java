@@ -4,13 +4,13 @@ public class Cliente {
     private String cedula;
     private String nombres;
     private String ciudad;
-    private String provincia;
-    private String canton;
     private String marca;
     private String modelo;
     private String numeroCelular;
     private double pagoMensual;
-
+    private String provincia;
+    private String canton;
+    
     // constructor
     public Cliente(String cedula, String nombres, String ciudad, String provincia, String canton, String marca, String modelo, String numeroCelular, double pagoMensual) {
         this.cedula = cedula;

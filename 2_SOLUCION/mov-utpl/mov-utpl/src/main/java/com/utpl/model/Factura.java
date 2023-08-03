@@ -1,7 +1,5 @@
 package com.utpl.model;
 
-import com.utpl.model.Cliente;
-
 public class Factura {
     private String id;
     private Cliente cliente;
